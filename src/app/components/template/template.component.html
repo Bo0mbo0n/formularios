@@ -46,9 +46,10 @@
     <div class="form-group row">
         <label class="col-2 col-form-label">País</label>
         <div class="col-md-8">
-            <select class="form-control" name="">
+            <select [(ngModel)]="usuario.pais" class="form-control" name="pais">
                     <option value="">Seleccione un país</option>
-                    <option *ngFor="let pais of paises" [value]="pais.codigo">{{pais.nombre}}</option> 
+                    <option *ngFor="let pais of paises" 
+                    [value]="pais.codigo">{{pais.nombre}}</option> 
 
                 </select>
         </div>
@@ -57,19 +58,36 @@
     <div class="form-group row">
         <label class="col-2 col-form-label">Sexo</label>
         <div class="col-md-8">
-            <label class="custom-control custom-radio">
+            <label *ngFor="let sexo of sexos" class="custom-control custom-radio">
                             <input [(ngModel)]="usuario.sexo"
-                            id="radio1" name="sexo" value="Hombre" type="radio" class="custom-control-input">
+                            id="radio1"
+                            name="sexo" 
+                            [value]="sexo" 
+                            type="radio" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">Masculino</span>
+                            <span class="custom-control-description">{{sexo}}</span>
                           </label>
-            <label class="custom-control custom-radio">
+            <!--label class="custom-control custom-radio">
                             <input [(ngModel)]="usuario.sexo"
                              id="radio2" name="sexo" value="Mujer" type="radio" class="custom-control-input">
                             <span class="custom-control-indicator"></span>
                             <span class="custom-control-description">Femenino</span>
-                          </label>
+                          </label-->
 
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Aceptar</label>
+        <div class="col-md-8">
+            <label class="custom-control custom-checkbox">
+                    <input [(ngModel)]="usuario.acepta"
+                    name="acepta"
+                    type="checkbox" class="custom-control-input"
+                    required>
+                    <span class="custom-control-indicator"></span>
+                    <span class="custom-control-description">Aceptar Terminos & Condiciones</span>
+                  </label>
         </div>
     </div>
 

@@ -17,8 +17,9 @@ export class TemplateComponent {
     nombre:null,
     apellido:null,
     correo:null,
-    pais:"",
-    sexo: "Hombre"
+    pais:"CRI",
+    sexo: "Hombre",
+    acepta:false
 
   }
 
@@ -33,7 +34,7 @@ export class TemplateComponent {
 ]
 
 sexos:string[] = [
-  "Hombre","Mujer"
+  "Hombre","Mujer","Sin definir"
 ]
 
   constructor() { }
